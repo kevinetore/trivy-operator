@@ -9,6 +9,7 @@ on:
   push:
     tags:
       - "v*"
+  workflow_dispatch:
 permissions: {}
 env:
   KIND_VERSION: v0.30.0

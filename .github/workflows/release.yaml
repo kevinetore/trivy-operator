@@ -136,18 +136,18 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USER }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: Login to ECR
-        uses: docker/login-action@74a5d142397b4f367a81961eba4e8cd7edddf772 # was: docker/login-action@v3.4.0
-        with:
-          registry: public.ecr.aws
-          username: ${{ secrets.ECR_ACCESS_KEY_ID }}
-          password: ${{ secrets.ECR_SECRET_ACCESS_KEY }}
-      - name: Login to ghcr.io
-        uses: docker/login-action@74a5d142397b4f367a81961eba4e8cd7edddf772 # was: docker/login-action@v3.4.0
-        with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+      # - name: Login to ECR
+      #   uses: docker/login-action@74a5d142397b4f367a81961eba4e8cd7edddf772 # was: docker/login-action@v3.4.0
+      #   with:
+      #     registry: public.ecr.aws
+      #     username: ${{ secrets.ECR_ACCESS_KEY_ID }}
+      #     password: ${{ secrets.ECR_SECRET_ACCESS_KEY }}
+      # - name: Login to ghcr.io
+      #   uses: docker/login-action@74a5d142397b4f367a81961eba4e8cd7edddf772 # was: docker/login-action@v3.4.0
+      #   with:
+      #     registry: ghcr.io
+      #     username: ${{ github.actor }}
+      #     password: ${{ secrets.GITHUB_TOKEN }}
       - name: Release
         uses: goreleaser/goreleaser-action@e435ccd777264be153ace6237001ef4d979d3a7a # was: goreleaser/goreleaser-action@v6
         with:

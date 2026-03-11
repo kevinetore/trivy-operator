@@ -157,6 +157,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           COSIGN_EXPERIMENTAL: 1
+          IMAGE_REPO: docker.io/etore/trivy-operator
       - name: Repository Dispatch Publish Helm Chart
         if: ${{ steps.latest_tag.outputs.tag == steps.chart_version.outputs.app_version }}
         uses: peter-evans/repository-dispatch@ff45666b9427631e3450c54a1bcbee4d9ff4d7c0 # was: peter-evans/repository-dispatch@v3
